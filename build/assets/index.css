@@ -1,9 +1,9 @@
 :root {
   --inventory-surface: transparent;
   --inventory-surface-strong: transparent;
-  --inventory-border: rgba(95, 43, 88, 0.72);
-  --inventory-text: #f5f1f6;
-  --inventory-muted: #ddd6e0;
+  --inventory-border: rgba(255, 255, 255, 0.22);
+  --inventory-text: #f5f5f5;
+  --inventory-muted: #d4d4d4;
   --inventory-accent: #20bff2;
   --inventory-accent-hover: #5bd8ff;
 }
@@ -184,7 +184,7 @@ body.inv-dragging .item-slot-wrapper {
 
 .useful-controls-dialog {
   color: #c1c2c5;
-  background-color: #22232c;
+  background-color: #202020;
   border-radius: 4px;
   flex-direction: column;
   gap: 16px;
@@ -222,7 +222,7 @@ body.inv-dragging .item-slot-wrapper {
 
 .useful-controls-dialog-close:hover {
   cursor: pointer;
-  background-color: #33343f;
+  background-color: #303030;
 }
 
 .useful-controls-content-wrapper {
@@ -302,7 +302,7 @@ body.inv-dragging .item-slot-wrapper {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: 7vh;
-  box-shadow: inset 0 0 0 1px rgba(8, 4, 12, 0.48);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.48);
   border: 1px solid var(--inventory-border);
   border-radius: 2.5%;
   position: relative;
@@ -401,7 +401,7 @@ body.inv-dragging .item-slot-wrapper {
 .tooltip-wrapper {
   pointer-events: none;
   color: #c1c2c5;
-  background-color: #22232c;
+  background-color: #202020;
   border: 1px inset #0003;
   border-radius: 4px;
   flex-direction: column;
@@ -523,8 +523,8 @@ body.inv-dragging .item-slot-wrapper {
 }
 
 .weight-bar {
-  background: rgba(8, 4, 12, 0.78);
-  border: 1px solid rgba(95, 43, 88, 0.5);
+  background: rgba(0, 0, 0, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 5%;
   height: 0.9vh;
   overflow: hidden;
