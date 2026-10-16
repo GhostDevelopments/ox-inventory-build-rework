@@ -1,3 +1,13 @@
+:root {
+  --inventory-surface: rgba(12, 7, 16, 0.72);
+  --inventory-surface-strong: rgba(24, 10, 22, 0.9);
+  --inventory-border: rgba(95, 43, 88, 0.72);
+  --inventory-text: #f5f1f6;
+  --inventory-muted: #ddd6e0;
+  --inventory-accent: #20bff2;
+  --inventory-accent-hover: #5bd8ff;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -40,9 +50,9 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .context-menu-list {
-  color: #c1c2c5;
-  background-color: #22232c;
-  border: 1px inset #0003;
+  color: var(--inventory-muted);
+  background-color: var(--inventory-surface-strong);
+  border: 1px solid var(--inventory-border);
   border-radius: 4px;
   outline: none;
   flex-direction: column;
@@ -52,8 +62,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .context-menu-item {
-  color: #c1c2c5;
-  background-color: #0000;
+  color: var(--inventory-muted);
+  background-color: transparent;
   border: none;
   border-radius: 4px;
   outline: none;
@@ -69,7 +79,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .context-menu-item:hover {
   cursor: pointer;
-  background-color: #33343f;
+  background-color: rgba(82, 28, 72, 0.66);
 }
 
 .tooltip-description {
@@ -112,7 +122,7 @@ body.inv-dragging .item-slot-wrapper {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
   height: 100%;
   display: flex;
 }
@@ -125,43 +135,46 @@ body.inv-dragging .item-slot-wrapper {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   display: flex;
 }
 
 .inventory-control .inventory-control-input {
   text-align: center;
-  color: #fff;
-  background-color: #0c0c0c66;
-  border: none;
+  color: var(--inventory-text);
+  background-color: var(--inventory-surface);
+  border: 1px solid var(--inventory-border);
   border-radius: 2.5%;
   outline: none;
-  padding: 16px 8px;
+  padding: 15px 8px;
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 15px;
   transition: all 0.2s;
 }
 
 .inventory-control .inventory-control-input:focus-within {
-  background-color: #0c0c0ccc;
+  background-color: var(--inventory-surface-strong);
 }
 
 .inventory-control .inventory-control-button {
-  color: #fff;
+  color: var(--inventory-text);
   text-transform: uppercase;
-  background-color: #0c0c0c66;
-  border: none;
+  background-color: var(--inventory-surface);
+  border: 1px solid var(--inventory-border);
   border-radius: 2.5%;
   width: 100%;
-  padding: 12px 8px;
+  min-height: 44px;
+  padding: 14px 8px;
   font-family: Roboto;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   transition: all 0.2s;
 }
 
 .inventory-control .inventory-control-button:hover {
-  background-color: #0c0c0ccc;
+  color: #fff;
+  background-color: rgba(45, 17, 43, 0.94);
+  border-color: var(--inventory-accent);
 }
 
 .useful-controls-dialog {
@@ -262,7 +275,8 @@ body.inv-dragging .item-slot-wrapper {
 }
 
 .inventory-grid-header-wrapper p {
-  font-size: 16px;
+  color: var(--inventory-text);
+  font-size: 17px;
 }
 
 .inventory-grid-container {
@@ -278,21 +292,22 @@ body.inv-dragging .item-slot-wrapper {
 .item-notification-item-box,
 .hotbar-item-slot {
   image-rendering: -webkit-optimize-contrast;
-  color: #c1c2c5;
-  background-color: #0c0c0c66;
+  color: var(--inventory-muted);
+  background-color: var(--inventory-surface);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: 7vh;
-  border: 1px inset #0003;
+  box-shadow: inset 0 0 0 1px rgba(8, 4, 12, 0.48);
+  border: 1px solid var(--inventory-border);
   border-radius: 2.5%;
   position: relative;
 }
 
 .inventory-slot-label-box {
-  color: #c1c2c5;
+  color: #fff;
   text-align: center;
-  background-color: #22232c;
-  border-top: 1px inset #0003;
+  background-color: var(--inventory-accent);
+  border-top: 1px solid rgba(125, 235, 255, 0.9);
   border-bottom-right-radius: 0.25vh;
   border-bottom-left-radius: 0.25vh;
 }
@@ -301,10 +316,10 @@ body.inv-dragging .item-slot-wrapper {
   text-transform: uppercase;
   white-space: nowrap;
   text-overflow: ellipsis;
-  padding: 2px 3px;
+  padding: 3px 4px;
   font-family: Roboto;
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 13px;
+  font-weight: 600;
   overflow: hidden;
 }
 
@@ -327,7 +342,7 @@ body.inv-dragging .item-slot-wrapper {
 }
 
 .item-slot-wrapper p {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .item-slot-header-wrapper,
@@ -350,7 +365,7 @@ body.inv-dragging .item-slot-wrapper {
 }
 
 .item-slot-info-wrapper p {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .item-slot-currency-wrapper {
@@ -475,10 +490,10 @@ body.inv-dragging .item-slot-wrapper {
 }
 
 .item-notification-action-box {
-  color: #c1c2c5;
+  color: #fff;
   text-transform: uppercase;
   text-align: center;
-  background-color: #0c0c0c66;
+  background-color: var(--inventory-accent);
   border-top-left-radius: 0.25vh;
   border-top-right-radius: 0.25vh;
   width: 100%;
@@ -503,10 +518,10 @@ body.inv-dragging .item-slot-wrapper {
 }
 
 .weight-bar {
-  background: #0006;
-  border: 1px inset #0000001a;
+  background: rgba(8, 4, 12, 0.78);
+  border: 1px solid rgba(95, 43, 88, 0.5);
   border-radius: 5%;
-  height: 0.8vh;
+  height: 0.9vh;
   overflow: hidden;
 }
 
