@@ -1,6 +1,6 @@
 :root {
-  --inventory-surface: rgba(12, 7, 16, 0.72);
-  --inventory-surface-strong: rgba(24, 10, 22, 0.9);
+  --inventory-surface: transparent;
+  --inventory-surface-strong: transparent;
   --inventory-border: rgba(95, 43, 88, 0.72);
   --inventory-text: #f5f1f6;
   --inventory-muted: #ddd6e0;
@@ -84,7 +84,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .context-menu-item:hover {
   cursor: pointer;
-  background-color: rgba(82, 28, 72, 0.66);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .tooltip-description {
@@ -178,7 +178,7 @@ body.inv-dragging .item-slot-wrapper {
 
 .inventory-control .inventory-control-button:hover {
   color: #fff;
-  background-color: rgba(45, 17, 43, 0.94);
+  background-color: rgba(255, 255, 255, 0.12);
   border-color: var(--inventory-accent);
 }
 
