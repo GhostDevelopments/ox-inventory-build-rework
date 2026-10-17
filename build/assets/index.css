@@ -1,11 +1,11 @@
 :root {
-  --inventory-surface: transparent;
-  --inventory-surface-strong: transparent;
-  --inventory-border: rgba(255, 255, 255, 0.22);
-  --inventory-text: #f5f5f5;
-  --inventory-muted: #d4d4d4;
-  --inventory-accent: #20bff2;
-  --inventory-accent-hover: #5bd8ff;
+  --inventory-surface: rgba(4, 12, 20, 0.58);
+  --inventory-surface-strong: rgba(3, 9, 16, 0.82);
+  --inventory-border: rgba(74, 200, 255, 0.42);
+  --inventory-text: #ffffff;
+  --inventory-muted: #dbe8ef;
+  --inventory-accent: #20c4ff;
+  --inventory-accent-hover: #69dcff;
 }
 
 html,
@@ -52,13 +52,14 @@ input[type="number"]::-webkit-outer-spin-button {
   color: #fff;
   width: 100%;
   height: 100%;
+  background: transparent;
 }
 
 .context-menu-list {
   color: var(--inventory-muted);
   background-color: var(--inventory-surface-strong);
   border: 1px solid var(--inventory-border);
-  border-radius: 4px;
+  border-radius: 2px;
   outline: none;
   flex-direction: column;
   min-width: 200px;
@@ -84,7 +85,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .context-menu-item:hover {
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(32, 196, 255, 0.18);
+  color: #ffffff;
 }
 
 .tooltip-description {
@@ -128,6 +130,7 @@ body.inv-dragging .item-slot-wrapper {
   justify-content: center;
   align-items: center;
   gap: 24px;
+  width: 100%;
   height: 100%;
   display: flex;
 }
@@ -147,9 +150,9 @@ body.inv-dragging .item-slot-wrapper {
 .inventory-control .inventory-control-input {
   text-align: center;
   color: var(--inventory-text);
-  background-color: var(--inventory-surface);
+  background-color: rgba(4, 12, 20, 0.62);
   border: 1px solid var(--inventory-border);
-  border-radius: 2.5%;
+  border-radius: 2px;
   outline: none;
   padding: 15px 8px;
   font-family: Roboto;
@@ -164,12 +167,12 @@ body.inv-dragging .item-slot-wrapper {
 .inventory-control .inventory-control-button {
   color: var(--inventory-text);
   text-transform: uppercase;
-  background-color: var(--inventory-surface);
+  background-color: rgba(4, 12, 20, 0.62);
   border: 1px solid var(--inventory-border);
-  border-radius: 2.5%;
+  border-radius: 2px;
   width: 100%;
   min-height: 44px;
-  padding: 14px 8px;
+  padding: 12px 8px;
   font-family: Roboto;
   font-size: 15px;
   font-weight: 500;
@@ -178,13 +181,14 @@ body.inv-dragging .item-slot-wrapper {
 
 .inventory-control .inventory-control-button:hover {
   color: #fff;
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: var(--inventory-accent);
+  background-color: rgba(32, 196, 255, 0.2);
+  border-color: var(--inventory-accent-hover);
+  box-shadow: 0 0 12px rgba(32, 196, 255, 0.2);
 }
 
 .useful-controls-dialog {
-  color: #c1c2c5;
-  background-color: #202020;
+  color: #dbe8ef;
+  background-color: rgba(3, 9, 16, 0.88);
   border-radius: 4px;
   flex-direction: column;
   gap: 16px;
@@ -198,7 +202,7 @@ body.inv-dragging .item-slot-wrapper {
 }
 
 .useful-controls-dialog-overlay {
-  background-color: #00000080;
+  background-color: rgba(0, 10, 18, 0.52);
 }
 
 .useful-controls-dialog-title {
@@ -222,7 +226,7 @@ body.inv-dragging .item-slot-wrapper {
 
 .useful-controls-dialog-close:hover {
   cursor: pointer;
-  background-color: #303030;
+  background-color: rgba(32, 196, 255, 0.18);
 }
 
 .useful-controls-content-wrapper {
@@ -256,13 +260,14 @@ body.inv-dragging .item-slot-wrapper {
 
 .useful-controls-button:hover {
   cursor: pointer;
-  background-color: #0c0c0ccc !important;
+  background-color: rgba(32, 196, 255, 0.22) !important;
+  box-shadow: 0 0 14px rgba(32, 196, 255, 0.24);
 }
 
 .useful-controls-exit-button {
   top: 8px;
   right: 8px;
-  color: gray !important;
+  color: #9edfff !important;
   border-radius: 2.5% !important;
   position: absolute !important;
 }
@@ -281,7 +286,9 @@ body.inv-dragging .item-slot-wrapper {
 
 .inventory-grid-header-wrapper p {
   color: var(--inventory-text);
-  font-size: 17px;
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
 .inventory-grid-container {
@@ -302,17 +309,19 @@ body.inv-dragging .item-slot-wrapper {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: 7vh;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.48);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(0, 0, 0, 0.18);
   border: 1px solid var(--inventory-border);
-  border-radius: 2.5%;
+  border-radius: 2px;
   position: relative;
+  transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s;
 }
 
 .inventory-slot-label-box {
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   background-color: var(--inventory-accent);
-  border-top: 1px solid rgba(125, 235, 255, 0.9);
+  border-top: 1px solid rgba(180, 240, 255, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 30, 48, 0.9);
   border-bottom-right-radius: 0.25vh;
   border-bottom-left-radius: 0.25vh;
 }
@@ -323,8 +332,8 @@ body.inv-dragging .item-slot-wrapper {
   text-overflow: ellipsis;
   padding: 3px 4px;
   font-family: Roboto;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
   overflow: hidden;
 }
 
@@ -400,8 +409,8 @@ body.inv-dragging .item-slot-wrapper {
 
 .tooltip-wrapper {
   pointer-events: none;
-  color: #c1c2c5;
-  background-color: #202020;
+  color: #dbe8ef;
+  background-color: rgba(3, 9, 16, 0.9);
   border: 1px inset #0003;
   border-radius: 4px;
   flex-direction: column;
@@ -495,10 +504,11 @@ body.inv-dragging .item-slot-wrapper {
 }
 
 .item-notification-action-box {
-  color: #fff;
+  color: #ffffff;
   text-transform: uppercase;
   text-align: center;
   background-color: var(--inventory-accent);
+  text-shadow: 0 1px 2px rgba(0, 30, 48, 0.9);
   border-top-left-radius: 0.25vh;
   border-top-right-radius: 0.25vh;
   width: 100%;
@@ -523,9 +533,9 @@ body.inv-dragging .item-slot-wrapper {
 }
 
 .weight-bar {
-  background: rgba(0, 0, 0, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 5%;
+  background: rgba(3, 9, 16, 0.68);
+  border: 1px solid rgba(74, 200, 255, 0.42);
+  border-radius: 2px;
   height: 0.9vh;
   overflow: hidden;
 }
